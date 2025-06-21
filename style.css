@@ -1,73 +1,103 @@
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  background: url("assets/background.png") no-repeat center center fixed;
-  background-size: cover;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
+/* Video background styling */
+#background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.7);
+}
 
-.wrapper {
+/* Frosted glass container */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  padding: 30px 25px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
+  z-index: 10;
 }
 
-.clock {
-  font-size: 80px; /* was 56px */
+/* Clock container - clock and am/pm side by side */
+#clock-container {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+#clock {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#ampm {
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-top: 10px; /* align AM/PM slightly higher */
+  user-select: none;
 }
 
-.greeting {
-  font-size: 28px; /* was 18px */
-  margin-bottom: 30px;
-  color: #f5bcbc;
-}
-
-
-#search {
-  width: 600px; /* was 300px */
-  max-width: 90%;
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: none;
-  background-color: #1a1d23;
-  color: white;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 30px;
-  outline: none;
-}
-
-
-.button-group {
+/* Links container */
+.links {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
-.button-group a {
-  background-color: transparent;
-  color: rgb(253, 253, 253); /* almost white */
+.links a {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
   text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 500;
-  border: 1px solid rgba(253, 244, 244, 0.896);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 5px rgba(255,255,255,0.3);
 }
 
-.button-group a:hover {
-  background-color: rgba(249, 249, 249, 0.97);
-  color: rgb(0, 0, 0); /* slightly darker */
+.links a:hover {
+  background: rgb(255, 255, 255);
+  color: #000;
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  #clock {
+    font-size: 2.5rem;
+  }
 }
