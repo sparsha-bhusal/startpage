@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> 🔮 | Homepage</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🔮 | Homepage</title>
+<link rel="icon" type="image/png" href="assets/favicon.jp" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <div id="clock" class="clock">12:36</div>
-    <div class="greeting"> 🔥 Chill 🔥 </div>
-    <input type="text" id="search" placeholder="Search..." onkeydown="search(event)" />
-    <div class="button-group">
-      <a href="https://chat.openai.com" target="_blank">ChatGPT</a>
-      <a href="https://youtube.com" target="_blank">YouTube</a>
-      <a href="https://github.com" target="_blank">GitHub</a>
-      <a href="https://www.canva.com" target="_blank">Canva</a>
-      <a href="https://www.google.com" target="_blank">Google</a>
-      </div>
+
+<!-- Video Background -->
+<video autoplay muted loop id="background-video" playsinline>
+  <source src="assets/background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<div class="container">
+  <div id="clock-container">
+    <div id="clock">00:00</div>
+    <div id="ampm">AM</div>
   </div>
-  <script src="script.js"></script>
+  <div class="links">
+    <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>
+    <a href="https://canva.com" target="_blank" rel="noopener">Canva</a>
+    <a href="https://drive.google.com" target="_blank" rel="noopener">Google Drive</a>
+    <a href="https://google.com" target="_blank" rel="noopener">Google</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
